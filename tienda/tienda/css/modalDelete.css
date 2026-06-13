@@ -1,0 +1,109 @@
+/*==== Estilos del Modal para Eliminar un registro ====*/
+.modal-confirm-delete{
+    width: min(97vw, 400px);
+    margin: auto;
+    border-radius: var(--border-radius-general);
+    border: none;
+    overflow: hidden;
+    box-shadow: 0 0 20px #0002;
+    position: relative;
+    opacity: 0;
+    transform: scale(0.4);
+    transition: 0.3s;
+}
+
+.modal-confirm-delete.show{opacity: 1; transform: scale(1);}
+.modal-confirm-delete.closing{opacity: 0; transform: scale(0.4);}
+
+.modal-confirm-delete::backdrop{
+    background-color: #0004;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.modal-confirm-delete.show::backdrop{
+    opacity: 1;
+    background-color: #0004;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+}
+
+.modal-confirm-delete.noActive{opacity: 0; pointer-events: none;}
+
+.modal-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-block: var(--padding-block-general);
+    padding-inline: var(--padding-iniline-general);
+}
+
+.modal-content{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.btn-option, .btn-closed{
+    border: none; 
+    border-radius: var(--border-radius-general);
+    -webkit-user-select: none;
+    user-select: none;
+    font-size: clamp(0.85rem, 1.07vw, 1rem);
+    color: #fff;
+}
+
+.btn-closed, .btn-option:active{color: #ddd;}
+
+.btn-closed{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 0 var(--border-radius-general) 0 0;
+    padding: 3px 6px;
+    background-color: var(--color-red);
+}
+
+.question-delete{
+    font-size: clamp(0.87rem, 1.15vw, 1.07rem);
+}
+
+.btn-options-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btn-option{
+    --border-radius-general: 12px;
+    min-width: 60px;
+    padding: 7px 20px;
+    transition: 0.2s;
+}
+
+.option-confirm{
+    background-color: var(--color-green);
+}
+
+.option-cancel{
+    background-color: var(--color-red);
+}
+
+.btn-option:hover{
+    animation: btnAnimateHover 0.8s ease alternate infinite;
+}
+
+.btn-option:active{
+    animation-play-state: paused;
+}
+
+.option-confirm:active{
+    --color-green: #080;
+}
+
+.option-cancel:active, .btn-closed:active{
+    --color-red: #800;
+}

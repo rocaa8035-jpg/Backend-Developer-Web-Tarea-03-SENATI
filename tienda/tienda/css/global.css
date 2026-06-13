@@ -1,0 +1,44 @@
+/* Configuración General de CSS */
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    display: inline-block;
+}
+
+/*=============================================*/
+/*==== CONFIGURACIÓN DEL BODY  ====*/
+body{
+    font-family: sans-serif;
+}
+/*=============================================*/
+/*==== Formularios heredan la fuente ====*/
+input, textarea, button, select, label{
+    font-family: inherit
+}
+
+input[type="submit"], button{
+    cursor: pointer;
+}
+
+.info-not-result{
+    text-align: center;
+}
+
+/*=============================================*/
+/*==== ANIMACIONES ====*/
+@keyframes btnAnimateHover {
+    0%{
+        transform: scale(1) translateY(0);
+        box-shadow: 0 0 0 #0002;
+    }
+
+    100%{
+        transform: scale(1.03) translateY(-3px);
+        box-shadow: 0 3px 10px #0006;
+    }
+}

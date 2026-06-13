@@ -1,0 +1,9 @@
+/*==== VARIABLES GLOBALES ====*/
+:root{
+    --bg-color: #efefef;
+    --border-radius-general : 8px;
+    --padding-block-general:25px;
+    --padding-iniline-general: clamp(7px, 2vw, 25px);
+    --color-red: #b00;
+    --color-green: #0b0;
+}
